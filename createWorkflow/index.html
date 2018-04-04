@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"; http-equiv="content-type" content="text/html">
+    <title>createWorkflow</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="StyleSheet" href="css/dtree.css" type="text/css" />
+    <script type="text/javascript" src="js/dtree.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div id="create_workflow">
+        <div>
+            <img src="pictures/newprocess.png"/>新建流程
+        </div>
+        <div class="dividing_line"></div>
+        <div class="text">
+            <div class="line-1">流程名称：</div>
+            <div class="line-3">描述：</div>
+        </div>
+        <div id="message">
+            <div>
+                <input id="name_of_workflow" type="text"/><span>*</span>
+            </div>
+            <div>
+                <textarea id="description_of_workflow"></textarea>
+            </div>
+        </div>
+        <div></div>
+        <div class="dividing_line"></div>
+        <div class="list">
+            <div class="dtree_left">
+                <script type="text/javascript">
+                    d_left = new dTree('d_left');
+                    d_left.add(0,-1,'新流程','','','','pictures/submit.png','pictures/submit.png',true);
+                    d_left.add(1,0,'提交','','','','pictures/submit.png','pictures/submit.png',true);
+                    d_left.add(2,1,'用户','','','','pictures/empty1.gif','pictures/empty1.gif',true);
+                    d_left.add(11,2,'zhanghua(张华)','','','','pictures/personnel.png','pictures/personnel.png');
+                    d_left.add(3,0,'校核','','','','pictures/audit.png','pictures/audit.png',true);
+                    d_left.add(4,3,'用户','','','','pictures/empty1.gif','pictures/empty1.gif',true);
+
+                    d_left.add(5,0,'技术状态控制','','','','pictures/audit.png','pictures/audit.png',true);
+                    d_left.add(6,5,'用户','','','','pictures/empty1.gif','pictures/empty1.gif',true);
+
+                    d_left.add(7,0,'审定','','','','pictures/audit.png','pictures/audit.png',true);
+                    d_left.add(8,7,'用户','','','','pictures/empty1.gif','pictures/empty1.gif',true);
+
+                    d_left.add(9,0,'批准','','','','pictures/audit.png','pictures/audit.png',true);
+                    d_left.add(10,9,'用户','','','','pictures/empty1.gif','pictures/empty1.gif',true);
+
+                    document.write(d_left);
+                </script>
+            </div>
+            <script>
+                $('.dtree_left').find('.dTreeNode').click(function(){
+                    if($(this).color=="rgb(255,255,255)"){
+
+                    }else{
+                        $('.dtree_left').find('.dTreeNode').css("color", "rgb(0,0,0)");
+                        $('.dtree_left').find('.node').css("color", "rgb(0,0,0)");
+                        $('.dtree_left').find('.dTreeNode').css("background-color", "rgb(255,255,255)");
+                        $('.dtree_left').find('.node').css("background-color", "rgb(255,255,255)");
+                        $('.dtree_left').find('.dTreeNode').removeClass("checked_left");
+                        $('.dtree_left').find('.node').removeClass("checked_left");
+                        $(this).css("color","rgb(255,255,255)");
+                        $(this).addClass("checked_left");
+                        $(this).css("background-color", "rgb(10,36,106");
+                        $(this).children('.node').css("color","rgb(255,255,255)");
+                        $(this).children('.node').css("background-color", "rgb(10,36,106)");
+                    }
+                })
+                $('.node').click(function(){
+                    if($(this).css("background","white")=="white"){
+                    }else {
+                        $('.dtree_left').children('.node').css("color", "rgb(0,0,0)");
+                        $('.dtree_left').children('.node').css("background-color", "rgb(255,255,255)");
+                        $(this).css("color","rgb(255,255,255)");
+                        $(this).css("background-color", "rgb(10,36,106");
+                    }
+                })
+            </script>
+        </div>
+        <div class="list">
+            <div class="dtree_right">
+                <script type="text/javascript">
+                    d_right = new dTree('d_right');
+                    d_right.add(0,-1,'组织');
+                    d_right.add(1,0,'624','','','','pictures/group.png','pictures/group.png',false);
+                    d_right.add(2,0,'410','','','','pictures/group.png','pictures/group.png',false);
+                    d_right.add(3,0,'420','','','','pictures/group.png','pictures/group.png',false);
+                    d_right.add(4,0,'430','','','','pictures/group.png','pictures/group.png',false);
+                    d_right.add(5,0,'黎阳','','','','pictures/group.png','pictures/group.png',false);
+
+                    d_right.add(6,1,'整机','','','','pictures/character.png','pictures/character.png',false);
+                    d_right.add(7,1,'中介机匣','','','','pictures/character.png','pictures/character.png',false);
+                    d_right.add(8,1,'高压压气机','','','','pictures/character.png','pictures/character.png',false);
+                    d_right.add(9,1,'主燃烧室','','','','pictures/character.png','pictures/character.png',false);
+                    d_right.add(10,1,'高压涡轮','','','','pictures/character.png','pictures/character.png',false);
+                    d_right.add(11,1,'中央传动','','','','pictures/character.png','pictures/character.png',false);
+                    d_right.add(12,1,'进气机匣','','','','pictures/character.png','pictures/character.png',false);
+                    d_right.add(13,1,'后承力机匣','','','','pictures/character.png','pictures/character.png',false);
+                    d_right.add(14,1,'喷管','','','','pictures/character.png','pictures/character.png',false);
+                    d_right.add(15,1,'DBA','','','','pictures/character.png','pictures/character.png',false);
+
+                    d_right.add(16,15,'infodba(infodba)','','','','pictures/personnel.png','pictures/personnel.png');
+                    d_right.add(17,6,'zhanghua(张华)','','','','pictures/personnel.png','pictures/personnel.png');
+                    document.write(d_right);
+                </script>
+            </div>
+            <script>
+                $('.dtree_right').find('.dTreeNode').click(function(){
+                    if($(this).color=="rgb(255,255,255)"){
+
+                    }else{
+                        $('.dtree_right').find('.dTreeNode').css("color", "rgb(0,0,0)");
+                        $('.dtree_right').find('.node').css("color", "rgb(0,0,0)");
+                        $('.dtree_right').find('.dTreeNode').css("background-color", "rgb(255,255,255)");
+                        $('.dtree_right').find('.node').css("background-color", "rgb(255,255,255)");
+                        $('.dtree_right').find('.dTreeNode').removeClass("checked_right");
+                        $('.dtree_right').find('.node').removeClass("checked_right");
+                        $(this).css("color","rgb(255,255,255)");
+                        $(this).addClass("checked_right");
+                        $(this).css("background-color", "rgb(10,36,106");
+                        $(this).children('.node').css("color","rgb(255,255,255)");
+                        $(this).children('.node').css("background-color", "rgb(10,36,106)");
+                    }
+                })
+                $('.node').click(function(){
+                    if($(this).css("background","white")=="white"){
+                    }else {
+                        $('.dtree_right').children('.node').css("color", "rgb(0,0,0)");
+                        $('.dtree_right').children('.node').css("background-color", "rgb(255,255,255)");
+                        $(this).css("color","rgb(255,255,255)");
+                        $(this).css("background-color", "rgb(10,36,106");
+                    }
+                })
+            </script>
+            <div>
+                <input id="search" type="text" placeholder="输入搜索准则..."/>
+                <button class="img_button" id="add_to_list">添加</button>
+                <button class="img_button" id="remove_list">移除</button>
+                <button class="img_button" id="personnel"><img class="button_img" src="pictures/personnel.png" /></button>
+            </div>
+        </div>
+        <div class="dividing_line"></div>
+
+        <div class="bottom">
+            <button class="operating" id="determine">确定</button>
+            <button class="operating" id="cancel">取消</button>
+        </div>
+    </div>
+</body>
+</html>
