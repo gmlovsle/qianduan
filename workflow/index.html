@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"; http-equiv="content-type" content="text/html">
+    <title>workflow</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div id="workflow">
+    <div id="start" class="node">
+        <div  class="node_up"></div>
+        <div class="node_down_green">
+            <img src="pictures/start.png"/>
+            <p>开始</p>
+        </div>
+    </div>
+    <div class="arrow">
+        <div class="line arrow_green"></div>
+        <div class="triangle_down"></div>
+    </div>
+
+    <div id="submit" class="node">
+        <div  class="node_up"></div>
+        <div class="node_down_yellow">
+            <img src="pictures/submit.png"/>
+            <p>提交</p>
+        </div>
+    </div>
+    <div class="arrow">
+        <div class="line arrow_gray"></div>
+        <div class="triangle"></div>
+    </div>
+
+    <div id="verify" class="node">
+        <div  class="node_up"></div>
+        <div class="node_down_gray">
+            <img src="pictures/audit.png"/>
+            <p>校核</p>
+        </div>
+    </div>
+    <div class="arrow">
+        <div class="line  arrow_gray"></div>
+        <div class="triangle"></div>
+    </div>
+
+    <div id="control" class="node">
+        <div  class="node_up"></div>
+        <div class="node_down_gray">
+            <img src="pictures/audit.png"/>
+            <p>技术状态控制</p>
+        </div>
+    </div>
+    <div class="arrow">
+        <div class="line  arrow_gray"></div>
+        <div class="triangle"></div>
+    </div>
+
+    <div id="audit" class="node">
+        <div  class="node_up"></div>
+        <div class="node_down_gray">
+            <img src="pictures/audit.png"/>
+            <p>审定</p>
+        </div>
+    </div>
+    <div class="arrow">
+        <div class="line  arrow_gray"></div>
+        <div class="triangle"></div>
+    </div>
+
+    <div id="approve" class="node">
+        <div  class="node_up"></div>
+        <div class="node_down_gray">
+            <img src="pictures/audit.png"/>
+            <p>批准</p>
+        </div>
+    </div>
+    <div class="arrow">
+        <div class="line  arrow_gray"></div>
+        <div class="triangle"></div>
+    </div>
+
+    <div id="complete" class="node">
+        <div  class="node_up"></div>
+        <div class="node_down_gray">
+            <img src="pictures/complete.png"/>
+            <p>完成</p>
+        </div>
+    </div>
+</div>
+<script>
+    $('.node').click(function(){
+        if($(this).children('div').hasClass('node_up')){
+            $('div.node_up_checked').addClass('node_up');
+            $('div.node_up_checked').removeClass('node_up_checked');
+            $(this).children('div').removeClass('node_up');
+            $(this).children('div').addClass('node_up_checked');
+        }
+    })
+</script>
+</body>
+</html>
